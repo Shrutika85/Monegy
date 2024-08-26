@@ -196,7 +196,7 @@ const Home = () => {
             className="mt-3"
           >
             <div className="filterRow">
-              <div className="text-white">
+              <div className="text-black">
                 <Form.Group className="mb-3" controlId="formSelectFrequency">
                   <Form.Label>Select Frequency</Form.Label>
                   <Form.Select
@@ -212,14 +212,15 @@ const Home = () => {
                 </Form.Group>
               </div>
 
-              <div className="text-white type">
+              <div className="text-black type">
                 <Form.Group className="mb-3" controlId="formSelectFrequency">
-                  <Form.Label>Type</Form.Label>
+                  <Form.Label >Type</Form.Label>
                   <Form.Select
                     name="type"
                     value={type}
                     onChange={handleSetType}
                   >
+                    
                     <option value="all">All</option>
                     <option value="expense">Expense</option>
                     <option value="credit">Earned</option>
@@ -227,7 +228,7 @@ const Home = () => {
                 </Form.Group>
               </div>
 
-              <div className="text-white iconBtnBox">
+              <div className="text-black iconBtnBox">
                 <FormatListBulletedIcon
                   sx={{ cursor: "pointer" }}
                   onClick={handleTableClick}
@@ -245,10 +246,10 @@ const Home = () => {
               </div>
 
               <div>
-                <Button onClick={handleShow} className="addNew">
+                <Button onClick={handleShow}   className="addNew btn-secondary ">
                   Add New
                 </Button>
-                <Button onClick={handleShow} className="mobileBtn">
+                <Button onClick={handleShow} className="mobileBtn btn-secondary ">
                   +
                 </Button>
                 <Modal show={show} onHide={handleClose} centered>
@@ -389,7 +390,7 @@ const Home = () => {
             )}
 
             <div className="containerBtn">
-              <Button variant="primary" onClick={handleReset}>
+              <Button className="btn-secondary" onClick={handleReset}>
                 Reset Filter
               </Button>
             </div>

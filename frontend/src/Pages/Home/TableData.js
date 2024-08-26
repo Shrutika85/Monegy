@@ -103,7 +103,7 @@ const TableData = (props) => {
               <th>Action</th>
             </tr>
           </thead>
-          <tbody className="text-white">
+          <tbody className="text-black">
             {props.data.map((item, index) => (
               <tr key={index}>
                 <td>{moment(item.date).format("YYYY-MM-DD")}</td>

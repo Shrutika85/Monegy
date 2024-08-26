@@ -73,29 +73,29 @@ const Analytics = ({ transactions }) => {
         <Row>
           <div className="col-lg-3 col-md-6 mb-4">
             <div className="card h-100">
-              <div className="card-header bg-black text-white">
+              <div className="card-header bg-secondary text-black">
                 <span style={{ fontWeight: "bold" }}>Total Transactions:</span>{" "}
                 {TotalTransactions}
               </div>
               <div className="card-body">
-                <h5 className="card-title " style={{color: "green"}}>
+                <h5 className="card-title " style={{color: "#00A9FF"}}>
                   Income: <ArrowDropUpIcon/>{totalIncomeTransactions.length}
                 </h5>
-                <h5 className="card-title" style={{color: "red"}}>
+                <h5 className="card-title" style={{color: "#FFB534"}}>
                   Expense: <ArrowDropDownIcon />{totalExpenseTransactions.length}
                 </h5>
 
                 <div className="d-flex justify-content-center mt-3">
                   <CircularProgressBar
                     percentage={totalIncomePercent.toFixed(0)}
-                    color="green"
+                    color="#00A9FF"
                   />
                 </div>
 
                 <div className="d-flex justify-content-center mt-4 mb-2">
                   <CircularProgressBar
                     percentage={totalExpensePercent.toFixed(0)}
-                    color="red"
+                    color="#FFB534"
                   />
                 </div>
               </div>
@@ -104,24 +104,24 @@ const Analytics = ({ transactions }) => {
 
           <div className="col-lg-3 col-md-6 mb-4">
             <div className="card h-100">
-              <div className="card-header bg-black text-white ">
+              <div className="card-header bg-secondary text-black ">
                 <span style={{ fontWeight: "bold" }}>Total TurnOver:</span>{" "}
                 {totalTurnOver}
               </div>
               <div className="card-body">
-                <h5 className="card-title" style={{color: "green"}}>Income: <ArrowDropUpIcon /> {totalTurnOverIncome} <CurrencyRupeeIcon /></h5>
-                <h5 className="card-title" style={{color: "red"}}>Expense: <ArrowDropDownIcon />{totalTurnOverExpense} <CurrencyRupeeIcon /></h5>
+                <h5 className="card-title" style={{color: "#00A9FF"}}>Income: <ArrowDropUpIcon /> {totalTurnOverIncome} </h5>
+                <h5 className="card-title" style={{color: "#FFB534"}}>Expense: <ArrowDropDownIcon />{totalTurnOverExpense} </h5>
                 <div className="d-flex justify-content-center mt-3">
                   <CircularProgressBar
                     percentage={TurnOverIncomePercent.toFixed(0)}
-                    color="green"
+                    color="#00A9FF"
                   />
                 </div>
 
                 <div className="d-flex justify-content-center mt-4 mb-4">
                   <CircularProgressBar
                     percentage={TurnOverExpensePercent.toFixed(0)}
-                    color="red"
+                    color="#FFB534"
                   />
                 </div>
               </div>
@@ -130,7 +130,7 @@ const Analytics = ({ transactions }) => {
 
           <div className="col-lg-3 col-md-6 mb-4">
             <div className="card h-100">
-              <div className="card-header  bg-black text-white">
+              <div className="card-header  bg-secondary text-black">
                 <span style={{ fontWeight: "bold" }}>Categorywise Income</span>{" "}
               </div>
               <div className="card-body">
@@ -156,7 +156,7 @@ const Analytics = ({ transactions }) => {
 
           <div className="col-lg-3 col-md-6 mb-4">
             <div className="card h-100">
-              <div className="card-header  bg-black text-white">
+              <div className="card-header  bg-secondary text-black">
                 <span style={{ fontWeight: "bold" }}>Categorywise Expense</span>{" "}
               </div>
               <div className="card-body">

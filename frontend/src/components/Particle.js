@@ -17,68 +17,71 @@ const Particle = () => {
     <>
     <div className="w-full h-full">
     <Particles
-      id="firefly-particles"
-      className="w-full h-screen"
-      init={particlesInit}
-      loaded={particlesLoaded}
-      options={{
-        fullScreen: {
-          enable: true,
-          fullScreen: false,
-        },
-        background: {
-          color: { value: '#000' },
-        },
-        fpsLimit: 60,
-        particles: {
-          number: {
-            value: 100,
-            density: {
-              enable: true,
-              value_area: 800,
+        id="fire-flies"
+        init={particlesInit}
+        loaded={particlesLoaded}
+        options={{
+          background: {
+            color: {
+              value: '#FAF3F0',
             },
           },
-          color: {
-            value: '#ffcc00',
-          },
-          shape: {
-            type: 'circle',
-          },
-          opacity: {
-            value: 0.5,
-            random: true,
-          },
-          size: {
-            value: 3,
-            random: { enable: true, minimumValue: 1 },
-          },
-          links: {
-            enable: false,
-          },
-          move: {
-            enable: true,
-            speed: 1,
-            outModes: {
-              default: 'out',
-            },
-          },
-          life: {
-            duration: {
-              sync: false,
-              value: 3,
-            },
-            count: 0,
-            delay: {
-              random: {
+          fpsLimit: 60,
+          particles: {
+            number: {
+              value: 50,
+              density: {
                 enable: true,
-                minimumValue: 0.5,
+                value_area: 800,
               },
-              value: 1,
+            },
+            color: {
+              value: '#10439F',
+            },
+            shape: {
+              type: 'circle',
+            },
+            opacity: {
+              value: 0.3,
+              random: true,
+            },
+            size: {
+              value: 3,
+              random: { enable: true, minimumValue: 1 },
+            },
+            links: {
+              enable: false,
+            },
+            move: {
+              enable: true,
+              speed: 2,
+            },
+            life: {
+              duration: {
+                sync: false,
+                value: 3,
+              },
+              count: 0,
+              delay: {
+                random: {
+                  enable: true,
+                  minimumValue: 0.5,
+                },
+                value: 1,
+              },
             },
           },
-        },
-      }}
-    />
+          detectRetina: true,
+        }}
+        style={{
+          position: 'absolute',
+          zIndex: -1,
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+        }}
+      />
     </div>
     </>
   );

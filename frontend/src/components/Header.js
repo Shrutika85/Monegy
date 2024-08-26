@@ -5,6 +5,7 @@ import "./style.css";
 import { useNavigate } from 'react-router-dom';
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
+
 const Header = () => {
   
 const navigate = useNavigate();
@@ -46,32 +47,32 @@ const navigate = useNavigate();
     <>
     <div style={{ position: 'relative', overflow: 'hidden' }}>
       <Particles
-        id="tsparticles"
+        id="fire-flies"
         init={particlesInit}
         loaded={particlesLoaded}
         options={{
           background: {
             color: {
-              value: '#000',
+              value: '#FAF3F0',
             },
           },
           fpsLimit: 60,
           particles: {
             number: {
-              value: 200,
+              value: 50,
               density: {
                 enable: true,
                 value_area: 800,
               },
             },
             color: {
-              value: '#ffcc00',
+              value: '#9E9FA5',
             },
             shape: {
               type: 'circle',
             },
             opacity: {
-              value: 0.5,
+              value: 0.3,
               random: true,
             },
             size: {
@@ -111,13 +112,14 @@ const navigate = useNavigate();
           bottom: 0,
         }}
       />
-    <Navbar className="navbarCSS" collapseOnSelect expand="lg" style={{position: 'relative', zIndex: "2 !important"}}>
+    <Navbar className="navbarCSS bg-dark" collapseOnSelect expand="lg" style={{position: 'relative', zIndex: "2 !important"}}>
       {/* <Navbar className="navbarCSS" collapseOnSelect expand="lg" bg="dark" variant="dark"> */}
-        <Navbar.Brand href="/" className="text-white navTitle">Expense Management System</Navbar.Brand>
+        <Navbar.Brand href="/" className="text-white  sans-serif  navTitle">MONGEY</Navbar.Brand>
         <Navbar.Toggle
             aria-controls="basic-navbar-nav"
             style={{
               backgroundColor: "transparent",
+              fontFamily:"Helvetica",
               borderColor: "transparent",
             }}
           >
@@ -129,11 +131,12 @@ const navigate = useNavigate();
             ></span>
           </Navbar.Toggle>
         <div>
-        <Navbar.Collapse id="responsive-navbar-nav" style={{color: "white"}}>
+        <Navbar.Collapse id="responsive-navbar-nav" style={{color: "black"}}>
           {user ? (
             <>
             <Nav>
-                <Button variant="primary" onClick={handleShowLogout} className="ml-2">Logout</Button>
+              <img src="../logo.svg " className="ml-2" alt="image "></img>
+                <Button variant="light" onClick={handleShowLogout} className="ml-2">Logout</Button>
               </Nav>
             </>
           ) : (
