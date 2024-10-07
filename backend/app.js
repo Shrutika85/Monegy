@@ -39,67 +39,71 @@ app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// app.use(session({
-//   secret:"dsjhcbsjh78787",
-//   resave:false,
-//   saveUninitialized:true
-// }))
 
-// passport.use(
-//   new OAuth2Strategy.Strategy({
-//       clientID:"client_id",
-//       clientSecret:"secret_key",
-//       callbackURL:"/auth/google/callback",
-//       scope:["profile","email"]
-//   },
-//   async(accessToken,refreshToken,profile,done)=>{
-//       try {
-//           let user = await userdb.findOne({email:profile.email});
+//comment start
+app.use(session({
+  secret:"dsjhcbsjh78787",
+  resave:false,
+  saveUninitialized:true
+}))
 
-//           if(!user){
-//               user = new userdb({
-//                 email:profile.email,
-//                   name:profile.displayName,
-//                   // password:
-//               });
+passport.use(
+  new OAuth2Strategy.Strategy({
+      clientID:"client_id",
+      clientSecret:"secret_key",
+      callbackURL:"/auth/google/callback",
+      scope:["profile","email"]
+  },
+  async(accessToken,refreshToken,profile,done)=>{
+      try {
+          let user = await userdb.findOne({email:profile.email});
 
-//               await user.save();
-//           }
+          if(!user){
+              user = new userdb({
+                email:profile.email,
+                  name:profile.displayName,
+                  // password:
+              });
 
-//           return done(null,user)
-//       } catch (error) {
-//           return done(error,null)
-//       }
-//   }
-//   )
-// )
+              await user.save();
+          }
 
-
-// passport.serializeUser((user,done)=>{
-//   done(null,user);
-// })
-
-// passport.deserializeUser((user,done)=>{
-//   done(null,user);
-// });
+          return done(null,user)
+      } catch (error) {
+          return done(error,null)
+      }
+  }
+  )
+)
 
 
-// app.get("/auth/google",passport.authenticate("google",{scope:["profile","email"]}));
-// console.log("enteres");
-// app.get("/auth/google/callback",passport.authenticate("google",{
-//     successRedirect:"http://localhost:3000/",
-//     failureRedirect:"http://localhost:3000/"
-// }))
+passport.serializeUser((user,done)=>{
+  done(null,user);
+})
+
+passport.deserializeUser((user,done)=>{
+  done(null,user);
+});
 
 
-// app.get("/login/sucess",async(req,res)=>{
+app.get("/auth/google",passport.authenticate("google",{scope:["profile","email"]}));
+console.log("enteres");
+app.get("/auth/google/callback",passport.authenticate("google",{
+    successRedirect:"http://localhost:3000/",
+    failureRedirect:"http://localhost:3000/"
+}))
 
-//   if(req.user){
-//       res.status(200).json({message:"user Login",user:req.user})
-//   }else{
-//       res.status(400).json({message:"Not Authorized"})
-//   }
-// })
+
+app.get("/login/sucess",async(req,res)=>{
+
+  if(req.user){
+      res.status(200).json({message:"user Login",user:req.user})
+  }else{
+      res.status(400).json({message:"Not Authorized"})
+  }
+})
+
+//comment end
 
 // Router
 app.use("/api/v1", transactionRoutes);
