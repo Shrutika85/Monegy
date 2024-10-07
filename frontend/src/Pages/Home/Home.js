@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "../../components/Header";
 import { useNavigate } from "react-router-dom";
-import { Button, Modal, Form, Container } from "react-bootstrap";
+import { Button, Modal, Form, Container ,Col ,Row} from "react-bootstrap";
 // import loading from "../../assets/loader.gif";
 import "./home.css";
 import { addTransaction, getTransactions } from "../../utils/ApiRequest";
@@ -195,6 +195,8 @@ const Home = () => {
             style={{ position: "relative", zIndex: "2 !important" }}
             className="mt-3"
           >
+          {/* <Row>
+          <Col md={3}> */}
             <div className="filterRow">
               <div className="text-black">
                 <Form.Group className="mb-3" controlId="formSelectFrequency">
@@ -211,6 +213,7 @@ const Home = () => {
                   </Form.Select>
                 </Form.Group>
               </div>
+            
 
               <div className="text-black type">
                 <Form.Group className="mb-3" controlId="formSelectFrequency">
@@ -227,6 +230,7 @@ const Home = () => {
                   </Form.Select>
                 </Form.Group>
               </div>
+              <br></br>
 
               <div className="text-black iconBtnBox">
                 <FormatListBulletedIcon
@@ -349,6 +353,8 @@ const Home = () => {
                 </Modal>
               </div>
             </div>
+           
+           
             <br style={{ color: "white" }}></br>
 
             {frequency === "custom" ? (
